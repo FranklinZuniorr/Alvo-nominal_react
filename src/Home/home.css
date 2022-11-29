@@ -1,0 +1,129 @@
+body{
+    background-image: url(./concreto.webp);
+    background-size: 50%;
+}
+
+.apresenta{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bloco{
+    font-family: system-ui;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    font-size: 4.3rem;
+    width: 41rem;
+    height: 26.7rem;
+    position: absolute;
+    background-image: url(/src/fundo.jpg);
+    background-size: 50%;
+    border-radius: 10px;
+    box-shadow: 0px 6px 11px 0px #000000a8;
+}
+
+.titulo{
+    margin-top: 3.5rem;
+    margin-left: 0rem;
+    filter: drop-shadow(0px 3px 3px rgb(0, 0, 0.6 ));
+}
+
+.subT{
+    margin-bottom: -3rem;
+    margin-left: 0rem;
+    filter: drop-shadow(0px 3px 3px rgb(0, 0, 0.6 ));
+    font-size: 1.2rem;
+}
+
+.subT2{
+    margin-top: -0.7rem;
+    margin-left: 0rem;
+    filter: drop-shadow(0px 1px 3px rgb(0, 0, 0.6 ));
+    font-size: 2rem;
+}
+
+.subT3{
+    margin-top: 1.2rem;
+    margin-left: 7.5rem;
+    width: 26rem;
+    filter: drop-shadow(0px 1px 3px rgb(0, 0, 0.6 ));
+    font-size: 1rem;
+}
+
+.react{
+    position: absolute;
+    top: 21rem;
+    left: 4rem;
+    width: 4rem;
+    filter: drop-shadow(0px 3px 3px rgb(0, 0, 0.6 ));
+    animation: reaAt 2s ease 0s infinite normal none;
+}
+
+.jogar{
+    background-color: aliceblue;
+    width: 15rem;
+    height: 4rem;
+    margin-top: 5rem;
+    margin-left: 13rem;
+    border-radius: 16px;
+    box-shadow: 0px 3px 11px 0px #000000a8;
+    background-image: linear-gradient(180deg, #a5d9f4 0, #6cb4d8 50%, #1d90bd 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+a:-webkit-any-link {
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/*
+Animações.
+*/
+
+@keyframes reaAt {
+	0% {
+		animation-timing-function: ease-out;
+		transform: scale(1);
+		transform-origin: center center;
+	}
+
+	10% {
+		animation-timing-function: ease-in;
+		transform: scale(0.91);
+	}
+
+	17% {
+		animation-timing-function: ease-out;
+		transform: scale(0.98);
+	}
+
+	33% {
+		animation-timing-function: ease-in;
+		transform: scale(0.87);
+	}
+
+	45% {
+		animation-timing-function: ease-out;
+		transform: scale(1);
+	}
+}
+
+@keyframes click {
+	0% {
+		transform: scale(1);
+	}
+
+	50% {
+		transform: scale(1.1);
+	}
+
+	100% {
+		transform: scale(1);
+	}
+}

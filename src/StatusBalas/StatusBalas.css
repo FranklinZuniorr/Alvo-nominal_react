@@ -1,0 +1,74 @@
+.bala{
+    rotate: -90deg;
+    width: 4rem;
+    position: absolute;
+    filter: drop-shadow(-3px -3px 2px rgba(0, 0, 0, 0.637));
+}
+
+.reload{
+    position: absolute;
+    width: 4rem;
+    left: 17rem;
+    filter: drop-shadow(0px 3px 3px rgb(0, 0, 0.6 ));
+    cursor: pointer;
+}
+
+.contador{
+    background-color: aqua;
+    background-image: url(/src/ferro3.jpg);
+    background-size: 100%;
+    width: 14rem;
+    height: 4rem;
+    margin-right: 2rem;
+    border-radius: 10px;
+    box-shadow: 0px 6px 11px 0px #000000a8;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+.circle {
+    border-radius: 50%;
+    border: 0.1rem solid #000000;
+    height: 2rem;
+    width: 2rem;
+    margin: 0;
+    margin: 0.2rem;
+    filter: drop-shadow(0px 3px 3px rgb(0, 0, 0.6 ));
+}
+
+.casa{
+    position: absolute;
+    top: 3rem;
+    margin-left: -20rem;
+    width: 3.8rem;
+    filter: drop-shadow(0px 3px 3px rgb(0, 0, 0.6 ));
+    cursor: pointer;
+}
+
+/*Animações.*/
+
+@keyframes reload {
+	0% {
+		transform: rotate(0);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes click {
+	0% {
+		transform: scale(1);
+	}
+
+	50% {
+		transform: scale(1.1);
+	}
+
+	100% {
+		transform: scale(1);
+	}
+}
