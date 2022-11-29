@@ -15,8 +15,7 @@ var reloadsound = new Audio(reloadSound);
 var Click = new Audio(click);
 
 function StatusBalas({planodefundo, Opacity, balas, eventRecarga, Tcor, start, opacity}){
-    console.log(planodefundo)
-    console.log(Opacity)
+
 
 const navigate = useNavigate();
 const home = useCallback(() => navigate('/', {replace: false}), [navigate]);
@@ -25,10 +24,7 @@ const [SyStatusBalas, setSystatusBalas] = useState([{
     backgroundColor: "green",
     backgroundImage: "url(" + planodefundo + ")",
     backgroundSize: "40rem",
-    width: "100%",
-    height: "36%",
     position: "absolute",
-    top: "37rem",
     paddingTop: "3rem",
     display: "flex",
     alignItems: "flex-start",

@@ -4,15 +4,15 @@ import './index.css';
 import App from './App';
 import Home from './Home/Home';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
       <Router>
           <Routes>
-              <Route path="/jogando" element={<App/>}/>
-              <Route path="" element={<Home/>}/>
+              <Route exact path="/jogando" element={<App/>}/>
+              <Route exact path="/" element={<Home/>}/>
           </Routes>
       </Router>
   </React.StrictMode>

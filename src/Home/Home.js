@@ -7,6 +7,7 @@ import {useNavigate} from 'react-router-dom';
 import React, {useCallback} from 'react';
 import click from './click.mp3';
 import parafuso from './parafuso.png';
+import pc from './pc.png';
 
 var Click = new Audio(click);
 
@@ -18,7 +19,7 @@ const jogar = useCallback(() => navigate('/jogando', {replace: false}), [navigat
 const [click, setClick] = useState({});
 
 return(
-<div className="apresenta">
+<div className="apresentA">
 <div className="bloco">
 
 <img src={parafuso} style={{height: "2rem", position: "absolute", top: "1rem", left: "1rem", filter: "drop-shadow(rgb(0, 0, 1) 0px 0px 2px)"}}/>
@@ -49,10 +50,9 @@ setTimeout(() => {
 Jogar
 </div>
 </div>
-
-
+ 
 <div className="subT3">
-Acerte o máximo possível de preposições que constituem a regência nominal. 
+Acerte o máximo possível de preposições que constituem a regência nominal.
 </div>
 
 <img src={react} className="react"></img>

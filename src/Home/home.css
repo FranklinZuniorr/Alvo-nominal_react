@@ -1,14 +1,41 @@
+@media (min-width: 699px){
 body{
     background-image: url(./concreto.webp);
     background-size: 50%;
 }
+}
 
-.apresenta{
+@media (max-width: 699px){
+body{
+    background-image: url(./concreto.webp);
+    background-size: 100%;
+}
+}
+
+@media (min-width: 699px){
+.apresentA{
+    position: fixed;
+    width: 100%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
+}
 
+@media (max-width: 699px){
+.apresentA{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    scale: 0.45;
+}
+}
+
+@media (min-width: 699px){
 .bloco{
     font-family: system-ui;
     font-weight: bold;
@@ -22,6 +49,24 @@ body{
     background-size: 50%;
     border-radius: 10px;
     box-shadow: 0px 6px 11px 0px #000000a8;
+}
+}
+
+@media (max-width: 699px){
+.bloco{
+    font-family: system-ui;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    font-size: 4.3rem;
+    width: 41rem;
+    height: 26.7rem;
+    position: absolute;
+    background-image: url(/src/fundo.jpg);
+    background-size: 50%;
+    border-radius: 10px;
+    box-shadow: 0px 6px 11px 0px #000000a8;
+}
 }
 
 .titulo{
@@ -82,6 +127,20 @@ a:-webkit-any-link {
     text-decoration: none;
 }
 
+/*@media (max-width: 700px), (max-height: 700px) and (orientation: portrait){
+
+.pc{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    flex-direction: column;
+}
+}
 /*
 Animações.
 */

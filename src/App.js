@@ -5,6 +5,7 @@ import buraco from './buraco.png';
 import tiro from './tiro.png';
 import fundo from './fundo.jpg';
 import parafuso from './parafuso.png';
+import estrela from './estrela.png';
 import like from './like.png';
 import sad from './sad.png';
 import cuidado from './cuidado.png';
@@ -13,6 +14,7 @@ import SomTiro from './shoot.mp3';
 import bip from './bip.mp3';
 import erro from './erro.mp3';
 import ponto from './ponto.mp3';
+import NovoRecord from './record.mp3';
 import StatusBalas from './StatusBalas/StatusBalas';
 
 import {useNavigate} from 'react-router-dom';
@@ -21,6 +23,7 @@ import { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
 var tempo = 0;
+var novoRecord = new Audio(NovoRecord);
 var Somtiro = new Audio(SomTiro);
 var Bip = new Audio(bip);
 var PontoErro = [new Audio(ponto), new Audio(erro)];
@@ -42,6 +45,21 @@ if(localStorage.getItem("record") == null){
 
 function App() {
 
+  const [conquista, setConquista] = useState({
+    color: "#353535",
+    padding: "0.7rem",
+    borderRadius: "1rem",
+    border: "0.2rem solid #ac6d00",
+    zIndex: "1",
+    position: "absolute",
+    height: "2.5rem",
+    display: "none",
+    alignItems: "center",
+    boxShadow: "0px 6px 11px 0px #000000a8",
+    background: "linear-gradient(0deg, #FFFFFF 0%, #FFF7A5 0%, #fff 100%)",
+    left: "12rem",
+    top: "-1rem",
+  });
   const [opacity, setopacity] = useState({opacity: "1"});
 
   //Tela inicial.
@@ -66,6 +84,66 @@ function App() {
     position: "absolute",
     filter: "drop-shadow(0px 3px 3px rgb(0, 0, 0.6 ))",
   });
+  
+  function chamaConquista(){
+    
+    novoRecord.load();
+    novoRecord.play();
+
+    setConquista({
+      color: "#353535",
+      padding: "0.7rem",
+      borderRadius: "1rem",
+      border: "0.2rem solid #ac6d00",
+      zIndex: "1",
+      position: "absolute",
+      height: "2.5rem",
+      display: "flex",
+      alignItems: "center",
+      boxShadow: "0px 6px 11px 0px #000000a8",
+      background: "linear-gradient(0deg, #FFFFFF 0%, #FFF7A5 0%, #fff 100%)",
+      left: "12rem",
+      top: "-1rem",
+      animation: "novorecord 1s ease 0s 1 normal forwards",
+    });
+
+    setTimeout(() => {
+      setConquista({
+        color: "#353535",
+        padding: "0.7rem",
+        borderRadius: "1rem",
+        border: "0.2rem solid #ac6d00",
+        zIndex: "1",
+        position: "absolute",
+        height: "2.5rem",
+        display: "flex",
+        alignItems: "center",
+        boxShadow: "0px 6px 11px 0px #000000a8",
+        background: "linear-gradient(0deg, #FFFFFF 0%, #FFF7A5 0%, #fff 100%)",
+        left: "12rem",
+        top: "-1rem",
+        animation: "novorecordexit 1s ease 0s 1 normal forwards",
+      });
+    }, 1000);
+
+    setTimeout(() => {
+      setConquista({
+        color: "#353535",
+        padding: "0.7rem",
+        borderRadius: "1rem",
+        border: "0.2rem solid #ac6d00",
+        zIndex: "1",
+        position: "absolute",
+        height: "2.5rem",
+        display: "none",
+        alignItems: "center",
+        boxShadow: "0px 6px 11px 0px #000000a8",
+        background: "linear-gradient(0deg, #FFFFFF 0%, #FFF7A5 0%, #fff 100%)",
+        left: "12rem",
+        top: "-1rem",
+      });
+    }, 2000);
+  }
 
   function mudaRe(x){
 
@@ -252,7 +330,7 @@ function App() {
   //Movimentação da mira.
 
   //Contagem de balas.
-  useEffect(() => {contagemDeBalas()})
+  useEffect(() => {contagemDeBalas()}, [])
   function contagemDeBalas(){
     if(balas == 5){
       setOpacity([1,1,1,1,1]);
@@ -287,10 +365,11 @@ function App() {
     height: "100%",
     zIndex: "7",
     color: "white",
-    fontSize: "4rem",
+    fontSize: "3rem",
     display: "none",
     alignItems: "center",
-    justifyContent: "center"
+    justifyContent: "center",
+    scale: "3"
   });
   //Fader.
 
@@ -372,12 +451,13 @@ function App() {
             height: "100%",
             zIndex: "7",
             color: "red",
-            fontSize: "4rem",
+            fontSize: "3rem",
             fontFamily: "fantasy",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
             animation: "fader 5s ease 0s 1 normal forwards",
+            scale: "3"
           });
         }, 1000);
 
@@ -388,11 +468,12 @@ function App() {
             height: "100%",
             zIndex: "7",
             color: "white",
-            fontSize: "4rem",
+            fontSize: "3rem",
             display: "flex",
             display: "none",
             alignItems: "center",
-            justifyContent: "center"
+            justifyContent: "center",
+            scale: "3"
           });
         }, 5100);
 
@@ -473,7 +554,8 @@ function App() {
     if(add > define){
       define = add;
       localStorage.setItem("record", define);
-      setRecord(add)
+      setRecord(add);
+      chamaConquista();
     }
 
     if(add > 0 && add < 10){
@@ -1063,6 +1145,11 @@ function App() {
     <div style={fd}>ERROU!</div>
 
     <div className="Tabela">
+    <div style={conquista}>
+    <img src={estrela} style={{position: "absolute", width: "4rem", left: "3.8rem", top: "-2.5rem",
+    filter: "drop-shadow(0px 1px 2px rgb(0, 0, 0.6 ))", }}></img>
+    Novo record: {Record}
+    </div>
     <div className="PontosAtuais">Pontos atuais: {Pontos}</div>
     <div className="PontosRecord">Melhor pontuação: {Record}</div>
     <img src={re} style={Sre}/>
