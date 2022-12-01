@@ -1,10 +1,3 @@
-@media (min-width: 699px){
-body{
-    background-image: url(./concreto.webp);
-    background-size: 50%;
-}
-}
-
 @media (max-width: 699px){
 body{
     background-image: url(./concreto.webp);
@@ -13,13 +6,9 @@ body{
 }
 
 @media (min-width: 699px){
-.apresentA{
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+body{
+    background-image: url(./concreto.webp);
+    background-size: 50%;
 }
 }
 
@@ -31,11 +20,22 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    scale: 0.45;
+    transform: scale(0.45);
 }
 }
 
 @media (min-width: 699px){
+.apresentA{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+}
+
+@media (max-width: 699px){
 .bloco{
     font-family: system-ui;
     font-weight: bold;
@@ -52,7 +52,7 @@ body{
 }
 }
 
-@media (max-width: 699px){
+@media (min-width: 699px){
 .bloco{
     font-family: system-ui;
     font-weight: bold;

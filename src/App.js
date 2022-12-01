@@ -104,7 +104,7 @@ function App() {
       background: "linear-gradient(0deg, #FFFFFF 0%, #FFF7A5 0%, #fff 100%)",
       left: "12rem",
       top: "-1rem",
-      animation: "novorecord 1s ease 0s 1 normal forwards",
+      animation: "novorecord 0.5s ease 0s 1 normal forwards",
     });
 
     setTimeout(() => {
@@ -122,9 +122,9 @@ function App() {
         background: "linear-gradient(0deg, #FFFFFF 0%, #FFF7A5 0%, #fff 100%)",
         left: "12rem",
         top: "-1rem",
-        animation: "novorecordexit 1s ease 0s 1 normal forwards",
+        animation: "novorecordexit 0.5s ease 0s 1 normal forwards",
       });
-    }, 1000);
+    }, 500);
 
     setTimeout(() => {
       setConquista({
@@ -142,7 +142,7 @@ function App() {
         left: "12rem",
         top: "-1rem",
       });
-    }, 2000);
+    }, 1000);
   }
 
   function mudaRe(x){
@@ -457,7 +457,7 @@ function App() {
             alignItems: "center",
             justifyContent: "center",
             animation: "fader 5s ease 0s 1 normal forwards",
-            scale: "3"
+            transform: "scale(3)"
           });
         }, 1000);
 
@@ -473,7 +473,7 @@ function App() {
             display: "none",
             alignItems: "center",
             justifyContent: "center",
-            scale: "3"
+            transform: "scale(3)"
           });
         }, 5100);
 
@@ -834,13 +834,13 @@ function App() {
 
     setTimeout(() => {
       setTiro([{
-    position: "absolute",
-    bottom: "-1.2rem",
-    zIndex: "0",
-    width: "11rem",
-    filter: "drop-shadow(2px 2px 2px rgb(0, 0, 0))",
-    opacity: "0",
-    writable: "true"
+      position: "absolute",
+      bottom: "-1.2rem",
+      zIndex: "0",
+      width: "11rem",
+      filter: "drop-shadow(2px 2px 2px rgb(0, 0, 0))",
+      opacity: "0",
+      writable: "true"
       }]);
     }, 210);
 
@@ -1146,7 +1146,7 @@ function App() {
 
     <div className="Tabela">
     <div style={conquista}>
-    <img src={estrela} style={{position: "absolute", width: "4rem", left: "3.8rem", top: "-2.5rem",
+    <img src={estrela} style={{position: "absolute", width: "4rem", left: "3rem", top: "-2.5rem",
     filter: "drop-shadow(0px 1px 2px rgb(0, 0, 0.6 ))", }}></img>
     Novo record: {Record}
     </div>
